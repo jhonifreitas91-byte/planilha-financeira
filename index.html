@@ -1,118 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Planilha Salva-Vida | Organize suas dívidas em 3 min</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        :root{
-            --verde-excel:#00D084;
-            --verde-escuro:#008c5c;
-            --cinza:#f5f7fa;
-            --preto:#222;
-        }
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe ui',tahoma,verdana,arial,helvetica,serif;}
-        body{color:var(--preto);background:var(--cinza);}
-        .container{max-width:900px;margin:auto;padding:20px;text-align:center;}
-        header{background:var(--verde-excel);padding:50px 20px;}
-        header h1{font-size:48px;color:#fff;}
-        header p{font-size:22px;color:#e6fffa;margin-top:10px;}
-        .cta{background:#fff;color:var(--verde-excel);padding:15px 30px;border:none;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;transition:.3s;margin-top:20px;}
-        .cta:hover{background:var(--verde-escuro);color:#fff;}
-        .sticky{position:fixed;bottom:20px;right:20px;z-index:999;}
-        .hero{padding:40px 0;text-align:center;}
-        .hero ul{list-style:none;display:inline-block;text-align:left;margin:20px 0;}
-        .hero li{margin:10px 0;font-size:18px;}
-        .beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 0;}
-        .card{background:#fff;padding:25px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
-        .card h3{color:var(--verde-excel);margin-bottom:10px;}
-        .modulo{background:#fff;margin:30px 0;padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
-        .modulo h3{color:var(--verde-excel);margin-bottom:15px;}
-        .preco{background:var(--verde-excel);color:#fff;text-align:center;padding:40px 20px;border-radius:10px;}
-        .preco h2{font-size:42px;}
-        .preco del{font-size:20px;opacity:.7;}
-        footer{text-align:center;padding:20px;font-size:14px;color:#777;}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Evoluir – Transforme metas em resultados visíveis</title>
+  <style>
+    :root {
+      -- --bg: #0f0f0f;
+      --accent: #00f0ff;
+      --text: #e0e0e0;
+      --card: #1a1a1a;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1.2rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .btn {
+      background: var(--accent);
+      color: #000;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      min-height: 90vh;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0 2rem;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px var(--accent);
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .testemunhos .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .testemunhos .name {
+      margin-top: auto;
+      font-weight: 700;
+    }
+    .preco {
+      text-align: center;
+    }
+    .preco h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .preco .valor {
+      font-size: 4rem;
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .preco .parcela {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      nav a {
+        display: none;
+      }
+      nav a.btn {
+        display: inline-block;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>Acabe com a bagunça das suas contas em 3 minutos</h1>
-        <p>A planilha que <strong>organiza dívidas, faturas e boletos</strong> antes que você tome outro susto no extrato</p>
-        <button class="cta" onclick="scrollToBuy()">Quero minha vida financeira organizada →</button>
-    </div>
-</header>
+  <header>
+    <nav>
+      <div class="logo">Projeto Evoluir</div>
+      <div>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#preco" class="btn">Quero evoluir agora</a>
+      </div>
+    </nav>
+  </header>
 
-<section class="container hero">
-    <h2>Veja tudo que a Planilha Salva-Vida faz por você:</h2>
-    <ul>
-        <li>✅ Calendário automático de pagamentos (nunca mais pague multa)</li>
-        <li>✅ Painel de contas a vencer em 1 tela</li>
-        <li>✅ Gráfico de gastos por categoria (luz, água, cartão, empréstimo…)</li>
-        <li>✅ Simulador de quitação antecipada</li>
-        <li>✅ Alerta de limite do cartão (evita juros de 400% ao ano)</li>
-        <li>✅ Funciona no Excel, LibreOffice e Google Sheets</li>
-    </ul>
-    
-</section>
+  <section class="hero">
+    <div>
+      <h1>Transforme metas em resultados visíveis</h1>
+      <p>
+        A planilha que organiza sua evolução pessoal. Acompanhe progresso em
+        estudos, fitness e vida pessoal de forma simples e prática.
+      </p>
+      <a href="#preco" class="btn">Quero evoluir agora</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1551288049-bebda8d3d0b2?auto=format&fit=crop&w=900&q=60" alt="Dashboard visual exemplo" />
+  </section>
 
-<section class="container beneficios">
-    <div class="card">
-        <h3>1. Importe seu extrato em 10 segundos</h3>
-        <p>Copie e cole do seu banco. A planilha separa automaticamente débitos, créditos e boletos.</p>
+  <section id="vantagens">
+    <h2 style="text-align:center; margin-bottom:2rem">Por que usar o Projeto Evoluir?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Tudo em um só lugar</h3>
+        <p>Todas as suas metas organizadas em uma planilha intuitiva e fácil de usar.</p>
+      </div>
+      <div class="card">
+        <h3>Visual claro e objetivo</h3>
+        <p>Interface limpa que mostra exatamente onde você está e para onde está indo.</p>
+      </div>
+      <div class="card">
+        <h3>Gráficos de progresso</h3>
+        <p>Veja seu crescimento atrando de gráficos e métricas que realmente importam.</p>
+      </div>
+      <div Hanging the card">
+        <h3>Constância diária</h3>
+        <p>Mantenha o hábito de evoluir todos os dias com acompanhamento visual motivador.</p>
+      </div>
     </div>
-    <div class="card">
-        <h3>2. Saiba exatamente quanto sobra no fim do mês</h3>
-        <p>Coloque seu salário e veja o valor livre após todas as contas pagas.</p>
-    </div>
-    <div class="card">
-        <h3>3. Economize até R$ 287/mês em juros</h3>
-        <p>Usuários relatam deixar de pagar 3 multas por atraso depois de 1 mês de uso.</p>
-    </div>
-</section>
+  </section>
 
-<section class="container">
-    <div class="modulo">
-        <h3>Módulo 1 – Organização Visual</h3>
-        <p>Cores automáticas mostram contas atrasadas (vermelho), a vencer em 3 dias (amarelo) e pagas (verde). Um olho e você sabe tudo.</p>
+  <section id="depoimentos" class="testemunhos">
+    <h2 style="text-align:center; margin-bottom:2rem">Quem já está evoluindo</h2>
+    <div class="grid">
+      <div class="card">
+        <p>“Finalmente consigo ver minha evolução nos estudos! A planilha me ajudou a manter o foco e a constância que eu precisava.”</p>
+        <span class="name">Maria Silva – Estudante</span>
+      </div>
+      <div class="card">
+        <p>“Uso para acompanhar minha evolução na academia e em projetos pessoais. Simples, direto e muito eficaz!”</p>
+        <span class="name">João Santos – Profissional de TI</span>
+      </div>
+      <div class="card">
+        <p>“A organização mudou completamente minha rotina. Ver o progresso visual me motiva todos os dias a continuar.”</p>
+        <span class="name">Ana Costa – Empreendedora</span>
+      </div>
     </div>
-    <div class="modulo">
-        <h3>Módulo 2 – Rotina Semanal</h3>
-        <p>Aba “Check-list semanal” com lembretes para revisar faturas, boletos e limite de crédito em menos de 5 min por dia.</p>
-    </div>
-    <div class="modulo">
-        <h3>Módulo 3 – Metas & Sobras</h3>
-        <p>Defina meta de economia mensal e acompanhe em tempo real quanto já separou. Impossível não bater a meta.</p>
-    </div>
-    <div class="modulo">
-        <h3>Módulo 4 – Histórico Inteligente</h3>
-        <p>Gráfico acumulado mostra tendência de gastos nos últimos 6 meses. Identifique vazamentos de dinheiro antes que virem avalanche.</p>
-    </div>
-</section>
+  </section>
 
-<section class="container">
-    <div class="preco">
-        <p>De <del>R$ 49,90</del> por apenas</p>
-        <h2>R$ 15,90</h2>
-        <p>Única vez. Atualizações grátis para sempre.</p>
-        <button class="cta" onclick="location.href='https://seguro.evoluamais.click/api/public/shopify?product=1677919318194&store=16779'">
-  Quero me organizar →
-</button>
+  <section id="preco" class="preco">
+    <h2>Comece sua evolução hoje</h2>
+    <p>Investimento único, transformação contínua</p>
+    <p class="parcela">De <span class="parcela">R$ 99,90</span> por apenas</p>
+    <p class="valor">R$ 19,99</p>
+    <p>Pagamento único • Acesso imediato • Atualizações grátis • Garantia de 7 dias</p>
+    <a href="#" class="btn">Quero o Projeto Evoluir</a>
+  </section>
 
-    </div>
-</section>
-
-<footer>
-    Planilha Salva-Vida © 2026 – Organize-se. Respire. Viva.
-</footer>
-
-<script>
-    function scrollToBuy(){
-        document.querySelector('.preco').scrollIntoView({behavior:'smooth'});
-    }
-    function buy(){
-        window.open("https://wa.me/5511999999999?text=Quero%20a%20Planilha%20Salva-Vida%20por%20R%24%2015%2C90");
-    }
-</script>
+  <footer>
+    © 2026 Projeto Evoluir – Produto digital – Todos os direitos reservados.
+  </footer>
 </body>
 </html>
