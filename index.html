@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Planilha Salva-Vida | Organize suas dívidas em 3 min</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root{
+            --verde-excel:#00D084;
+            --verde-escuro:#008c5c;
+            --cinza:#f5f7fa;
+            --preto:#222;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+        body{color:var(--preto);background:var(--cinza);}
+        .container{max-width:1000px;margin:auto;padding:20px;}
+        header{text-align:center;padding:40px 0;background:var(--verde-excel);}
+        header h1{font-size:48px;color:#fff;}
+        header p{font-size:22px;color:#e6fffa;margin-top:10px;}
+        .cta{background:#fff;color:var(--verde-excel);padding:15px 30px;border:none;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;transition:.3s;}
+        .cta:hover{background:var(--verde-escuro);color:#fff;}
+        .sticky{position:fixed;bottom:20px;right:20px;z-index:999;}
+        .hero{display:flex;align-items:center;gap:30px;padding:40px 0;flex-wrap:wrap;}
+        .hero img{width:100%;max-width:500px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.1);}
+        .beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 0;}
+        .card{background:#fff;padding:25px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
+        .card h3{color:var(--verde-excel);margin-bottom:10px;}
+        .preco{background:var(--verde-excel);color:#fff;text-align:center;padding:40px 20px;border-radius:10px;}
+        .preco h2{font-size:42px;}
+        .preco del{font-size:20px;opacity:.7;}
+        footer{text-align:center;padding:20px;font-size:14px;color:#777;}
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Acabe com a bagunça das suas contas em 3 minutos</h1>
+        <p>A planilha que <strong>organiza dívidas, faturas e boletos</strong> antes que você tome outro susto no extrato</p>
+        <button class="cta" onclick="scrollToBuy()">Quero minha vida financeira organizada →</button>
+    </div>
+</header>
+
+<section class="container hero">
+    <div>
+        <h2>Veja tudo que a Planilha Salva-Vida faz por você:</h2>
+        <ul>
+            <li>✅ Calendário automático de pagamentos (nunca mais pague multa)</li>
+            <li>✅ Painel de contas a vencer em 1 tela</li>
+            <li>✅ Gráfico de gastos por categoria (luz, água, cartão, empréstimo…)</li>
+            <li>✅ Simulador de quitação antecipada</li>
+            <li>✅ Alerta de limite do cartão (evita juros de 400% ao ano)</li>
+            <li>✅ Funciona no Excel, LibreOffice e Google Sheets</li>
+        </ul>
+        <button class="cta" onclick="scrollToBuy()">Baixar agora por apenas R$ 15,90</button>
+    </div>
+    <img src="https://i.imgur.com/8X5tZcP.png" alt="Planilha em uso">
+</section>
+
+<section class="container beneficios">
+    <div class="card">
+        <h3>1. Importe seu extrato em 10 segundos</h3>
+        <p>Copie e cole do seu banco. A planilha separa automaticamente débitos, créditos e boletos.</p>
+    </div>
+    <div class="card">
+        <h3>2. Saiba exatamente quanto sobra no fim do mês</h3>
+        <p>Coloque seu salário e veja o valor livre após todas as contas pagas.</p>
+    </div>
+    <div class="card">
+        <h3>3. Economize até R$ 287/mês em juros</h3>
+        <p>Usuários relatam deixar de pagar 3 multas por atraso depois de 1 mês de uso.</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="preco">
+        <p>De <del>R$ 49,90</del> por apenas</p>
+        <h2>R$ 15,90</h2>
+        <p>Única vez. Atualizações grátis para sempre.</p>
+        <button class="cta" onclick="buy()">Comprar com WhatsApp →</button>
+    </div>
+</section>
+
+<footer>
+    Planilha Salva-Vida © 2026 – Organize-se. Respire. Viva.
+</footer>
+
+<script>
+    function scrollToBuy(){
+        document.querySelector('.preco').scrollIntoView({behavior:'smooth'});
+    }
+    function buy(){
+        window.open("https://wa.me/5511999999999?text=Quero%20a%20Planilha%20Salva-Vida%20por%20R%24%2015%2C90");
+    }
+</script>
+</body>
+</html>
