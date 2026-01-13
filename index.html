@@ -11,20 +11,23 @@
             --cinza:#f5f7fa;
             --preto:#222;
         }
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe ui',tahoma,verdana,arial,helvetica,serif;}
         body{color:var(--preto);background:var(--cinza);}
-        .container{max-width:1000px;margin:auto;padding:20px;}
-        header{text-align:center;padding:40px 0;background:var(--verde-excel);}
+        .container{max-width:900px;margin:auto;padding:20px;text-align:center;}
+        header{background:var(--verde-excel);padding:50px 20px;}
         header h1{font-size:48px;color:#fff;}
         header p{font-size:22px;color:#e6fffa;margin-top:10px;}
-        .cta{background:#fff;color:var(--verde-excel);padding:15px 30px;border:none;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;transition:.3s;}
+        .cta{background:#fff;color:var(--verde-excel);padding:15px 30px;border:none;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;transition:.3s;margin-top:20px;}
         .cta:hover{background:var(--verde-escuro);color:#fff;}
         .sticky{position:fixed;bottom:20px;right:20px;z-index:999;}
-        .hero{display:flex;align-items:center;gap:30px;padding:40px 0;flex-wrap:wrap;}
-        .hero img{width:100%;max-width:500px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.1);}
+        .hero{padding:40px 0;text-align:center;}
+        .hero ul{list-style:none;display:inline-block;text-align:left;margin:20px 0;}
+        .hero li{margin:10px 0;font-size:18px;}
         .beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 0;}
         .card{background:#fff;padding:25px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
         .card h3{color:var(--verde-excel);margin-bottom:10px;}
+        .modulo{background:#fff;margin:30px 0;padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
+        .modulo h3{color:var(--verde-excel);margin-bottom:15px;}
         .preco{background:var(--verde-excel);color:#fff;text-align:center;padding:40px 20px;border-radius:10px;}
         .preco h2{font-size:42px;}
         .preco del{font-size:20px;opacity:.7;}
@@ -41,19 +44,16 @@
 </header>
 
 <section class="container hero">
-    <div>
-        <h2>Veja tudo que a Planilha Salva-Vida faz por você:</h2>
-        <ul>
-            <li>✅ Calendário automático de pagamentos (nunca mais pague multa)</li>
-            <li>✅ Painel de contas a vencer em 1 tela</li>
-            <li>✅ Gráfico de gastos por categoria (luz, água, cartão, empréstimo…)</li>
-            <li>✅ Simulador de quitação antecipada</li>
-            <li>✅ Alerta de limite do cartão (evita juros de 400% ao ano)</li>
-            <li>✅ Funciona no Excel, LibreOffice e Google Sheets</li>
-        </ul>
-        <button class="cta" onclick="scrollToBuy()">Baixar agora por apenas R$ 15,90</button>
-    </div>
-    <img src="https://i.imgur.com/8X5tZcP.png" alt="Planilha em uso">
+    <h2>Veja tudo que a Planilha Salva-Vida faz por você:</h2>
+    <ul>
+        <li>✅ Calendário automático de pagamentos (nunca mais pague multa)</li>
+        <li>✅ Painel de contas a vencer em 1 tela</li>
+        <li>✅ Gráfico de gastos por categoria (luz, água, cartão, empréstimo…)</li>
+        <li>✅ Simulador de quitação antecipada</li>
+        <li>✅ Alerta de limite do cartão (evita juros de 400% ao ano)</li>
+        <li>✅ Funciona no Excel, LibreOffice e Google Sheets</li>
+    </ul>
+    <button class="cta" onclick="scrollToBuy()">Baixar agora por apenas R$ 15,90</button>
 </section>
 
 <section class="container beneficios">
@@ -68,6 +68,25 @@
     <div class="card">
         <h3>3. Economize até R$ 287/mês em juros</h3>
         <p>Usuários relatam deixar de pagar 3 multas por atraso depois de 1 mês de uso.</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="modulo">
+        <h3>Módulo 1 – Organização Visual</h3>
+        <p>Cores automáticas mostram contas atrasadas (vermelho), a vencer em 3 dias (amarelo) e pagas (verde). Um olho e você sabe tudo.</p>
+    </div>
+    <div class="modulo">
+        <h3>Módulo 2 – Rotina Semanal</h3>
+        <p>Aba “Check-list semanal” com lembretes para revisar faturas, boletos e limite de crédito em menos de 5 min por dia.</p>
+    </div>
+    <div class="modulo">
+        <h3>Módulo 3 – Metas & Sobras</h3>
+        <p>Defina meta de economia mensal e acompanhe em tempo real quanto já separou. Impossível não bater a meta.</p>
+    </div>
+    <div class="modulo">
+        <h3>Módulo 4 – Histórico Inteligente</h3>
+        <p>Gráfico acumulado mostra tendência de gastos nos últimos 6 meses. Identifique vazamentos de dinheiro antes que virem avalanche.</p>
     </div>
 </section>
 
